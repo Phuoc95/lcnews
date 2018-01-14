@@ -1,0 +1,15 @@
+@include('templates.cnews.rightbar')
+      <div class="clr"></div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright <a href="#">VinaEnter</a></p>
+      <p class="rf">Code by <a href="/">Trần Nguyễn Gia Huy</a></p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+</html>
