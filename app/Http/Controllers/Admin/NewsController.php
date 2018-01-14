@@ -27,14 +27,22 @@ class NewsController extends Controller
 		if(!is_null($file)){
 		//upload file 
 			if($request->hasFile('picture')){
-				$fileName = $request->picture->getClientOriginalName();//lay ten goc				
-				$path = $request->file('picture')->store('public/files') ;
+				$fileName = $request->picture->getClientOriginalName();//lay ten goc	
+				$tmp = explode('.',$fileName);		
+				$ext = end($tmp);
+				$newName = "VNE-".time().".$ext";
+				//dd($newName);
+				//$fileName = end($tmp);	
+				//$path = $request->file('picture')->store('public/files') ;
 				//upload xong đồng thời trả về đường dẫn bắt đầu từ storage/app 
-			
-				$tmp = explode('/',$path);
-				$fileName = end($tmp);
 
-				$request->fileName = $fileName; //them fileName lun vao dtuong $request
+				// $tmp = explode('/',$path);
+				//$fileName = end($tmp);
+				$path = $request->file('picture')->storeAs(
+					'tenTuybien',$newName
+				);
+
+				$request->fileName = $newName; //them fileName lun vao dtuong $request
 			}else{
 				echo "loi upload";
 			}

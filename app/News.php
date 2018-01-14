@@ -20,7 +20,7 @@ class News extends Model
         $this->preview_text = $request->preview;
         $this->detail_text = $request->detail;
         if($request->hasFile('picture')){
-             // $this->picture = $request->picture->getClientOriginalName();
+        // $this->picture = $request->picture->getClientOriginalName();
          $this->picture = $request->fileName;;
      }
      return $this->save();
